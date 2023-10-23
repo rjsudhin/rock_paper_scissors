@@ -34,10 +34,31 @@ function checkingWinner(playerSelection, computerSelection) {
     }
 }
 
+//adding user choice to input
+// then checking the thing is existing in options
+function getUserInputChoice() {
+    let userChoice = false
+    while (userChoice == false) {
+
+        // getting the user input with prompt
+        const userInput = prompt("rock paper scissors", 'rock')
+        if (userInput == null) {
+            continue
+        }
+        
+        // checking the user input in existing in options
+        // adding any case is working ex: 'rock', 'Rock', 'ROCK'
+        const lowerUserInput = userInput.toLowerCase()
+        if (option.includes(lowerUserInput)) {
+            userChoice = true
+            return lowerUserInput
+        }
+    }
+}
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = "rock"
+        const playerSelection = getUserInputChoice() // getting user Input
         const computerSelection = getComputerChoice()
         console.log(checkingWinner(playerSelection, computerSelection))
     }
