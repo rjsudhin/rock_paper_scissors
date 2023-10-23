@@ -1,5 +1,9 @@
 console.log("Hello World")
 
+// adding players points
+let playerPoint = 0
+let computerPoint = 0
+
 let option = ['rock', 'paper', 'scissors']
 
 // computer getting random choice each time
@@ -16,8 +20,10 @@ function playRound(playerSelection,computerSelection) {
         (playerSelection == 'paper' && computerSelection == 'rock') ||
         (playerSelection == 'scissors' && computerSelection == 'paper')
     ) {
+        playerPoint++
         return "player"
     } else {
+        computerPoint++
         return "computer"
     }
 }
@@ -63,6 +69,14 @@ function game() {
         console.log(checkingWinner(playerSelection, computerSelection))
     }
 
+    // checking who is the winner at the end with more points
+    if (computerPoint == playerPoint) {
+        alert("The Points will be Draw")
+    } else if (playerPoint > computerPoint) {
+        alert(`You Win "${playerPoint}" Points`)
+    } else {
+        alert(`Computer Win "${computerPoint}" Points`)
+    }
 }
 
 game()
