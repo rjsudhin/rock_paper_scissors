@@ -1,2 +1,2 @@
 # rock_paper_scissors
-javascrip scratch project without interface working console only
+now added buttons and working fine
