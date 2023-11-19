@@ -1,6 +1,6 @@
-const computerChoiceDisplay = document.getElementById('computer-choice')
-const userChoiceDisplay = document.getElementById('user-choice')
-const result = document.getElementById('result')
+const computerChoiceDisplay = document.querySelector('#computer-choice')
+const userChoiceDisplay = document.querySelector('#user-choice')
+const result = document.querySelector('#result')
 console.log(result)
 
 let userInput
